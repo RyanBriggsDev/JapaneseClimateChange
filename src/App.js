@@ -8,17 +8,19 @@ import Home from './pages/Home';
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 
-
 function App() {
+
   return (
     <Router>
       <div className="page-layout">
           <div className="container">
             <Nav />
-            <Routes>
-              <Route path='/home' element={<Home />} />
-              <Route path='/' element={<Home />} />
-            </Routes>
+              <main>
+                <Routes>
+                  <Route path='/home' element={<Home />} />
+                  <Route path='/' element={<Home />} />
+                </Routes>
+              </main>
             <Footer />
         </div>
       </div>

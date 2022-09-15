@@ -31,9 +31,15 @@ ul, li, a {
     min-height: 100vh;
   }
 
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
 
 /* components */
 
   /* header */
 
-  
