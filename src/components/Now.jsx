@@ -22,11 +22,10 @@ function Now() {
     
     useEffect(() => {
         fetchData()
-        console.log(currentWeather);
     }, [callComplete])
 
 
-    const {main, name, weather, wind, sys, temp} = currentWeather
+    const { main, name, weather, wind} = currentWeather
 
     if(!callComplete) {
         return <h1>Loading...</h1>
@@ -34,7 +33,7 @@ function Now() {
 
     if(callComplete) {
         return (
-            <div>
+            <div className="now">
                 <h2>Let's take a look at {name}'s weather right now.</h2>
                 <p>Sky: {weather[0].main}.</p>
                 <p>Wind speed: {wind.speed}m/s.</p>

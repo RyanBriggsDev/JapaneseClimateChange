@@ -20,22 +20,25 @@ ul, li, a {
 
   .page-layout {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .container {
+    width: 100%;
     max-width: 1250px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0 30px;
-    min-height: 100vh;
-  }
-
-  .page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 60px;
+    gap: 30px;
+    padding: 0 2rem;
   }
 
 
@@ -43,3 +46,23 @@ ul, li, a {
 
   /* header */
 
+
+
+  /* nav */
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem 0;
+  }
+
+  .nav-container {
+    width: 100%;
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 0 2rem;
+  }
