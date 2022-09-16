@@ -6,6 +6,10 @@ function Now() {
 
     const [currentWeather, setCurrentWeather] = useState({})
     const [callComplete, setCallComplete] = useState(false)
+    const [date, setDate] = useState(null)
+    const [month, setMonth] = useState(null)
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     const fetchData = async () => {
         try {
@@ -24,6 +28,13 @@ function Now() {
         fetchData()
     }, [callComplete])
 
+    useEffect(() => {
+        setDate(new Date())
+        if(date) {
+            setMonth(months[date.getMonth()])
+        }
+    }, date, month)
+
 
     const { main, name, weather, wind} = currentWeather
 
@@ -34,7 +45,7 @@ function Now() {
     if(callComplete) {
         return (
             <div className="now">
-                <h2>Let's take a look at {name}'s weather right now.</h2>
+                <h2>Let's take a look at {name}'s weather right now. {`${date.getDate()} ${month}, ${date.getFullYear()}`}</h2>
                 <p>Sky: {weather[0].main}.</p>
                 <p>Wind speed: {wind.speed}m/s.</p>
                 <div className="temp">
@@ -46,8 +57,6 @@ function Now() {
             </div>
           )
     }
-    
-
 }
 
 export default Now
