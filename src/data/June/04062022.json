@@ -5,9 +5,9 @@
     "main":
     {
         "temp":288.45,
-        "temp_min":285.67,
-        "temp_max":290.35,
-        "feels_like":287.34,
+        "temp_min":32.15,
+        "temp_max":39.64,
+        "feels_like":35.42,
         "pressure":1013,
         "humidity":50,
         "dew_point":278.1
@@ -17,14 +17,12 @@
         "all":80
     },
     "weather":
-    [
         {
             "id":803,
             "main":"Clouds",
             "description":"broken clouds",
             "icon":"04n"
-        }
-    ],
+        },
     "wind":
     {
         "speed":0.97,
@@ -32,4 +30,5 @@
     },
     "lon":138.252924,
     "lat":36.204824,
-    "city_name":"Japan"}
+    "city_name":"Japan"
+}

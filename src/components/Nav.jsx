@@ -19,7 +19,6 @@ function Nav() {
           if(data) {
               setCurrentWeather(data)
               setCallComplete(true)
-              console.log(currentWeather);
           }    
       } catch (error) {
           console.log(error)
