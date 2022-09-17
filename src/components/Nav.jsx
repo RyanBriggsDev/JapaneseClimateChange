@@ -9,6 +9,7 @@ function Nav() {
 
   const [currentWeather, setCurrentWeather] = useState({})
   const [callComplete, setCallComplete] = useState(false)
+  const [navToggle, setNavToggle] = useState(false)
 
   const { main, name, weather, wind} = currentWeather
 
@@ -27,7 +28,9 @@ function Nav() {
   
   useEffect(() => {
       fetchData()
-  }, [callComplete])
+      console.log(navToggle)
+  }, [callComplete, navToggle])
+  
 
   if(!callComplete) return <nav><p>Loading...</p></nav>
 
@@ -42,11 +45,16 @@ function Nav() {
           <p>Currently it's {Math.round(currentWeather.main.temp * 10) / 10}°C</p>
         </div>
         <div className="nav-right">
-          <ul>
-            <Link to='/about'><li>About</li></Link>
-            <Link to='/june'><li>June</li></Link>
-            <Link to='/january'><li>January</li></Link>
+          <ul className={navToggle ? 'mobile-menu' : ''}>
+            <Link onClick={() => navToggle ? setNavToggle(false) : null} className={navToggle ? 'show' : ''} to='/about'><li>About</li></Link>
+            <Link onClick={() => navToggle ? setNavToggle(false) : null} className={navToggle ? 'show' : ''} to='/june'><li>June</li></Link>
+            <Link onClick={() => navToggle ? setNavToggle(false) : null} className={navToggle ? 'show' : ''} to='/january'><li>January</li></Link>
           </ul>
+          <div onClick={() => setNavToggle(!navToggle)} className={`hamburger`}>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+          </div>
         </div>
       </div>
     </nav>

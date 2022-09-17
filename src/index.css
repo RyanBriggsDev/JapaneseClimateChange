@@ -57,7 +57,7 @@ ul, li, a {
     padding: 0.2rem 0;
   }
 
-  .nav-container {
+  nav .nav-container {
     width: 100%;
     max-width: 1250px;
     display: grid;
@@ -76,6 +76,10 @@ ul, li, a {
     margin: 0 auto;
   }
 
+  nav .nav-mid p{
+    text-align: center;
+  }
+
   nav .nav-right {
     margin-left: auto;
   }
@@ -87,6 +91,55 @@ ul, li, a {
   nav ul > * {
     display: inline-block;
     padding: 0.2rem 0.5rem;
+  }
+
+  nav .hamburger {
+    display: none;
+    width: 2rem;
+  }
+
+  nav .hamburger:hover {
+    cursor: pointer;
+  }
+
+  nav .hamburger .hamburger-line {
+    background-color: black;
+    height: 2.5px;
+    width: 100%;
+    margin: 7.5px 0;
+  }
+
+  @media screen and (max-width: 48rem) {
+    nav .hamburger {
+      display: block;
+    }
+
+    nav .nav-right > ul > * {
+      display: none;
+    }
+
+    nav .nav-container {
+      grid-template-columns: 0.3fr 1.4fr 0.3fr;
+    }
+  } 
+
+  @media screen {
+    
+  }
+
+  nav .mobile-menu {
+    display: block;
+    position: absolute;
+    top: 4em;
+    width: 100%;
+    left: 0;
+    flex-direction: column;
+  }
+
+  nav .show {
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 
 /* reusable classes */
