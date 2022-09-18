@@ -24,13 +24,12 @@ function Nav() {
       } catch (error) {
           console.log(error)
       }
-      }
+    }
   
   useEffect(() => {
       fetchData()
       console.log(navToggle)
   }, [callComplete, navToggle])
-  
 
   if(!callComplete) return <nav><p>Loading...</p></nav>
 
@@ -46,9 +45,9 @@ function Nav() {
         </div>
         <div className="nav-right">
           <ul className={navToggle ? 'mobile-menu' : ''}>
-            <Link onClick={() => navToggle ? setNavToggle(false) : null} className={navToggle ? 'show' : ''} to='/about'><li>About</li></Link>
-            <Link onClick={() => navToggle ? setNavToggle(false) : null} className={navToggle ? 'show' : ''} to='/june'><li>June</li></Link>
-            <Link onClick={() => navToggle ? setNavToggle(false) : null} className={navToggle ? 'show' : ''} to='/january'><li>January</li></Link>
+            <Link onClick={() => navToggle ? setNavToggle(false) : true} className={navToggle ? 'show' : 'hide'} to='/about'><li>About</li></Link>
+            <Link onClick={() => navToggle ? setNavToggle(false) : true} className={navToggle ? 'show' : 'hide'} to='/june'><li>June</li></Link>
+            <Link onClick={() => navToggle ? setNavToggle(false) : true} className={navToggle ? 'show' : 'hide'} to='/january'><li>January</li></Link>
           </ul>
           <div onClick={() => setNavToggle(!navToggle)} className={`hamburger`}>
             <div className="hamburger-line"></div>

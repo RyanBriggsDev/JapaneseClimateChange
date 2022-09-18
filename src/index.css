@@ -114,26 +114,22 @@ ul, li, a {
       display: block;
     }
 
-    nav .nav-right > ul > * {
+    nav .nav-right ul .hide {
       display: none;
     }
 
     nav .nav-container {
       grid-template-columns: 0.3fr 1.4fr 0.3fr;
     }
-  } 
-
-  @media screen {
     
-  }
-
-  nav .mobile-menu {
-    display: block;
-    position: absolute;
-    top: 4em;
-    width: 100%;
-    left: 0;
-    flex-direction: column;
+    nav .mobile-menu {
+      display: block;
+      position: absolute;
+      top: 4em;
+      width: 100%;
+      left: 0;
+      flex-direction: column;
+    }
   }
 
   nav .show {
